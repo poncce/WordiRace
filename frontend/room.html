@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordiRace — Sala</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Countdown overlay -->
+  <div id="countdown-overlay" class="countdown-overlay hidden">
+    <div class="countdown-overlay__number">3</div>
+    <div class="countdown-overlay__label">preparate...</div>
+  </div>
+
+  <div class="page">
+    <div class="container">
+
+      <div class="logo">
+        <h1 class="logo__title">WordiRace</h1>
+      </div>
+
+      <!-- Status bar -->
+      <div class="status-bar">
+        <div class="status-bar__indicator">
+          <span id="status-dot" class="status-dot"></span>
+          <span id="status-label">Conectando...</span>
+        </div>
+        <a href="/" class="btn btn--danger" style="padding:0.3rem 0.8rem; font-size:0.75rem;">Salir</a>
+      </div>
+
+      <!-- Room code -->
+      <div class="panel" style="margin-bottom:1rem;">
+        <p class="panel__title">▸ código de sala</p>
+        <div class="room-code">
+          <span id="room-code-display" class="room-code__value">------</span>
+          <button id="copy-code" class="room-code__copy">Copiar enlace</button>
+        </div>
+        <p class="text-dim mt-1">Compartí este código con tus amigos para que se unan.</p>
+      </div>
+
+      <!-- Players -->
+      <div class="panel" style="margin-bottom:1rem;">
+        <p class="panel__title">▸ jugadores</p>
+        <ul id="player-list" class="player-list"></ul>
+      </div>
+
+      <!-- Host settings (hidden for non-hosts) -->
+      <div id="settings-panel" class="panel hidden" style="margin-bottom:1rem;">
+        <p class="panel__title">▸ configuración (host)</p>
+        <form id="settings-form">
+          <div class="field">
+            <label for="s-word-length">Longitud de palabra</label>
+            <select id="s-word-length">
+              <option value="5" selected>5 letras</option>
+              <option value="6">6 letras</option>
+              <option value="7">7 letras</option>
+              <option value="8">8 letras</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="s-max-attempts">Intentos máximos</label>
+            <select id="s-max-attempts">
+              <option value="4">4 intentos</option>
+              <option value="5">5 intentos</option>
+              <option value="6" selected>6 intentos</option>
+              <option value="8">8 intentos</option>
+              <option value="10">10 intentos</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--outline btn--full">Guardar configuración</button>
+        </form>
+      </div>
+
+      <!-- Start button (host only) -->
+      <button id="start-btn" class="btn btn--primary btn--full hidden">Iniciar partida ▶</button>
+      <p id="waiting-msg" class="text-dim text-center mt-2">Esperando que el host inicie la partida...</p>
+
+    </div>
+  </div>
+
+  <script type="module">
+    import { initLobby } from "/js/room.js";
+    initLobby();
+  </script>
+</body>
+</html>

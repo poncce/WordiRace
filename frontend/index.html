@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordiRace</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="toast-container" class="toast-container"></div>
+
+  <div class="page">
+    <div class="container">
+
+      <div class="logo">
+        <h1 class="logo__title">WordiRace</h1>
+        <p class="logo__sub">wordle multijugador en español</p>
+      </div>
+
+      <!-- Create room -->
+      <div class="panel">
+        <p class="panel__title">▸ crear sala</p>
+        <form id="create-form">
+          <div class="field">
+            <label for="create-nickname">Tu apodo</label>
+            <input id="create-nickname" type="text" placeholder="Ej: jugador42" maxlength="20" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="word-length">Longitud de palabra</label>
+            <select id="word-length">
+              <option value="5" selected>5 letras</option>
+              <option value="6">6 letras</option>
+              <option value="7">7 letras</option>
+              <option value="8">8 letras</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="max-attempts">Intentos máximos</label>
+            <select id="max-attempts">
+              <option value="4">4 intentos</option>
+              <option value="5">5 intentos</option>
+              <option value="6" selected>6 intentos</option>
+              <option value="8">8 intentos</option>
+              <option value="10">10 intentos</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Crear sala →</button>
+        </form>
+      </div>
+
+      <div class="divider">o</div>
+
+      <!-- Join room -->
+      <div class="panel">
+        <p class="panel__title">▸ unirse a sala</p>
+        <form id="join-form">
+          <div class="field">
+            <label for="join-nickname">Tu apodo</label>
+            <input id="join-nickname" type="text" placeholder="Ej: jugador42" maxlength="20" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="room-code-input">Código de sala</label>
+            <input id="room-code-input" type="text" placeholder="XXXXXX" maxlength="6"
+                   autocomplete="off" style="letter-spacing:0.3em; text-transform:uppercase; font-size:1.2rem;">
+          </div>
+          <button type="submit" class="btn btn--outline btn--full">Unirse →</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="/js/room.js"></script>
+</body>
+</html>

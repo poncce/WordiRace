@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordiRace — Juego</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%       { transform: translateX(-6px); }
+      40%       { transform: translateX(6px); }
+      60%       { transform: translateX(-4px); }
+      80%       { transform: translateX(4px); }
+    }
+  </style>
+</head>
+<body>
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- End game modal -->
+  <div id="end-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <h2 id="modal-title" class="modal__title">FIN DEL JUEGO</h2>
+      <p class="text-dim">La palabra era</p>
+      <div id="modal-word" class="modal__word"></div>
+      <ul id="modal-ranking" class="ranking-list"></ul>
+      <button id="play-again-btn" class="btn btn--primary btn--full mt-2">Volver a la sala</button>
+    </div>
+  </div>
+
+  <!-- Game layout -->
+  <div style="padding: 1rem;">
+
+    <!-- Status bar -->
+    <div class="status-bar" style="max-width:900px; margin: 0 auto 1rem;">
+      <div class="status-bar__indicator">
+        <span id="status-dot" class="status-dot"></span>
+        <span id="status-label">Conectando...</span>
+      </div>
+        <span class="text-dim">WordiRace</span>
+    </div>
+
+    <div class="game-layout">
+
+      <!-- Board + keyboard -->
+      <div>
+        <div id="board" class="board"></div>
+        <div id="keyboard" class="keyboard"></div>
+      </div>
+
+      <!-- Players sidebar -->
+      <div>
+        <p class="panel__title" style="margin-bottom:0.75rem;">▸ jugadores</p>
+        <div id="players-panel" class="players-panel"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <input id="hidden-input" class="hidden-input" autofocus>
+  <script type="module" src="/js/game.js"></script>
+</body>
+</html>
