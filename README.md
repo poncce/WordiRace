@@ -1,9 +1,12 @@
 # 🎮 Wordle Multijugador
 
+> 📚 **Proyecto académico desarrollado para la materia Programación Sobre Redes.**
+>
+> El objetivo del proyecto es aplicar conceptos de comunicación cliente-servidor, WebSockets, persistencia de datos y desarrollo de aplicaciones distribuidas en tiempo real.
+
 > ⚠️ **Estado del proyecto: En desarrollo**
 >
-> Este proyecto se encuentra actualmente en desarrollo activo. Algunas funcionalidades pueden estar incompletas, presentar errores o sufrir cambios importantes en futuras versiones. Se agradece cualquier sugerencia, reporte de fallos o contribución.
-
+> Este proyecto se encuentra actualmente en desarrollo activo. Algunas funcionalidades pueden estar incompletas, presentar errores o sufrir cambios importantes en futuras versiones.
 ## 📖 Descripción
 
 Wordle Multijugador es una aplicación web inspirada en el popular juego Wordle, diseñada para que varios jugadores puedan competir en tiempo real dentro de salas privadas.
